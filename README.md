@@ -13,94 +13,95 @@ Version:
 Public CVE:  
   
 Overflow type:  
-	- • stack:  
-		-  • offset to overwrite EIP:  
-		-  • bad characters:  
-		-  • Amount of space following overwrite:  
-		-  • Address to JMP ESP:  
-		-  • DEP:  
-		-  • ASLR:  
-	- •SEH:  
-		○ Offest to overwrite SEH:  
-		○ Modules without SafeSEH:  
-		○ Address to P/P/R:  
-		○ short jump on NEH:  0x06eb9090  
-		○ Bad characters:  
-		○ Amount of space after SEH overwrite:  
-  
-Egghunter:  
-	- • Search string: w00tw00t
-	- • Address location:
-	- • Bad characters:
-	- • Amount of space:
-	- • Egghunter source:
-	- • Egghunter Assembly:
-  
-Shellcode:
-	- • msfvenom command:
-	- • shell type:
-	- • custom shellcode:
-	- • listener command:
-  
+&nbsp;&nbsp;&nbsp;&nbsp;<ui> stack:</ui>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ offset to overwrite EIP:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ bad characters:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ Amount of space following overwrite:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ Address to JMP ESP:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ DEP:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ ASLR:  
+
+&nbsp;&nbsp;&nbsp;&nbsp;<ui> SEH:</ui>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ Offest to overwrite SEH:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ Modules without SafeSEH:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ Address to P/P/R:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ short jump on NEH:  0x06eb9090  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ Bad characters:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ Amount of space after SEH overwrite:  
+
+ <ui>Egghunter:</ui>   
+&nbsp;&nbsp;&nbsp;&nbsp;• Search string: w00tw00t  
+&nbsp;&nbsp;&nbsp;&nbsp;• Address location:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Bad characters:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Amount of space:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Egghunter source:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Egghunter Assembly:  
+
+<ui>Shellcode:</ui>  
+&nbsp;&nbsp;&nbsp;&nbsp;• msfvenom command:  
+&nbsp;&nbsp;&nbsp;&nbsp;• shell type:  
+&nbsp;&nbsp;&nbsp;&nbsp;• custom shellcode:  
+&nbsp;&nbsp;&nbsp;&nbsp;• listener command:  
+
 Custom shellcode:  
-	- • Requirements:
-	- • Additional functions or structures required:
-	- • Function prototypes:
-	- • Pseudo code outline:
-	- • reusable variables:
-	- • Stack offsets to store variables:
-  
+&nbsp;&nbsp;&nbsp;&nbsp;• Requirements:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Additional functions or structures required:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Function prototypes:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Pseudo code outline:  
+&nbsp;&nbsp;&nbsp;&nbsp;• reusable variables:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Stack offsets to store variables:  
+
 DEP:  
-	- • Modules without bad characters:
-	- • VirtualAlloc, VirtualProtect, or WriteProcessMemory:
-	- • Address or pointer to VA, VP, or WPM:
-	- • Known values that can be hard coded:
-	- • ROP template:  
-	    #VirtualAlloc  
-	    va  = struct.pack("<L", (0x45454545)) # dummy VirutalAlloc Address  
-	    va += struct.pack("<L", (0x46464646)) # Shellcode Return Address  
-	    va += struct.pack("<L", (0x47474747)) # # dummy Shellcode Address  
-	    va += struct.pack("<L", (0x48484848)) # dummy dwSize  
-	    va += struct.pack("<L", (0x49494949)) # # dummy flAllocationType  
-	    va += struct.pack("<L", (0x51515151)) # dummy flProtect  
-	    #Offset to control EIP  
-	    offset =offset to overwrite EIP  
-	    #EIP  
-	    eip =address to drop into buffer  
-	    # Patch VirtualAlloc  
-	    rop = address to gadget  
-	    # Patch Shellcode Return Address  
-	   rop += addressto next gadget  
-	    # Patch Shellcode lpAddress  
+&nbsp;&nbsp;&nbsp;&nbsp;• Modules without bad characters:  
+&nbsp;&nbsp;&nbsp;&nbsp;• VirtualAlloc, VirtualProtect, or WriteProcessMemory:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Address or pointer to VA, VP, or WPM:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Known values that can be hard coded:  
+&nbsp;&nbsp;&nbsp;&nbsp; [] • ROP template:   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#VirtualAlloc  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;va  = struct.pack("<L", (0x45454545)) # dummy VirutalAlloc Address  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;va += struct.pack("<L", (0x46464646)) # Shellcode Return Address  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;va += struct.pack("<L", (0x47474747)) # # dummy Shellcode Address  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;va += struct.pack("<L", (0x48484848)) # dummy dwSize  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;va += struct.pack("<L", (0x49494949)) # # dummy flAllocationType  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;va += struct.pack("<L", (0x51515151)) # dummy flProtect  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Offset to control EIP  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;offset =offset to overwrite EIP  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#EIP  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eip =address to drop into buffer  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Patch VirtualAlloc  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rop = address to gadget  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Patch Shellcode Return Address  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rop += addressto next gadget  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Patch Shellcode lpAddress  
 	  
-	    # Patch dwSize  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Patch dwSize  
 	  
-	    # Patch flAllocationType 0x1000  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Patch flAllocationType 0x1000  
 	  
-	    # Patch flProtect  
-	  
-	    # Allign ESP to VirtualAlloc call  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Patch flProtect  
+  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Allign ESP to VirtualAlloc call  
   
 ASLR:  
-	- • DebugHelp, CreateToolhelp32Snapshot, EnumPrcessModules, fopen:
-	- • string format specifier:
-		- ○ printf, sprintf, vnsprintf:
-		- ○ %x:
-		- ○ %n:
-		- ○ Number of characters to leak address:
-		- ○ leaked module address:
-		- ○ leaked stack address:
+&nbsp;&nbsp;&nbsp;&nbsp;• DebugHelp, CreateToolhelp32Snapshot, EnumPrcessModules, fopen:  
+&nbsp;&nbsp;&nbsp;&nbsp;• string format specifier:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ printf, sprintf, vnsprintf:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ %x:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ %n:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ Number of characters to leak address:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ leaked module address:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;○ leaked stack address:  
   
 Reverse Engineering:  
-	- • Listening ports:
-	- • Header format:
-	- • Checksum:
-	- • Opcodes:
-	- • Memory corruptions (scanf, scanf, memset, memcpy, strcpy):
-	- • Packet to trigger crash:
-	- • Packet to trigger info leak:
-	- • Command injection:
-
+&nbsp;&nbsp;&nbsp;&nbsp;• Listening ports:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Header format:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Checksum:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Opcodes:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Memory corruptions (scanf, scanf, memset, memcpy, strcpy):  
+&nbsp;&nbsp;&nbsp;&nbsp;• Packet to trigger crash:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Packet to trigger info leak:  
+&nbsp;&nbsp;&nbsp;&nbsp;• Command injection:  
+  
 PoC to crash:  
   
 PoC to EIP control:  
@@ -113,5 +114,5 @@ PoC DEP:
   
 Final PoC:  
   
-Proof.txt:
-	
+Proof.txt:  
+		  
