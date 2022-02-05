@@ -14,12 +14,12 @@ Public CVE:
   
 Overflow type:  
 	- • stack:  
-		- • offset to overwrite EIP:  
-		- • bad characters:  
-		- • Amount of space following overwrite:  
-		- • Address to JMP ESP:  
-		- • DEP:  
-		- • ASLR:  
+		-  • offset to overwrite EIP:  
+		-  • bad characters:  
+		-  • Amount of space following overwrite:  
+		-  • Address to JMP ESP:  
+		-  • DEP:  
+		-  • ASLR:  
 	- •SEH:  
 		○ Offest to overwrite SEH:  
 		○ Modules without SafeSEH:  
