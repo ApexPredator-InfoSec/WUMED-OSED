@@ -28,34 +28,34 @@ This is the template I use to keep track of details while building an exploit or
 		- ○ Bad characters:
 		- ○ Amount of space after SEH overwrite:
 
-Egghunter:
-	• Search string: w00tw00t
-	• Address location:
-	• Bad characters:
-	• Amount of space:
-	• Egghunter source:
-	• Egghunter Assembly:
+- Egghunter:
+	- • Search string: w00tw00t
+	- • Address location:
+	- • Bad characters:
+	- • Amount of space:
+	- • Egghunter source:
+	- • Egghunter Assembly:
 
-Shellcode:
-	• msfvenom command:
-	• shell type:
-	• custom shellcode:
-	• listener command:
+- Shellcode:
+	- • msfvenom command:
+	- • shell type:
+	- • custom shellcode:
+	- • listener command:
 
-Custom shellcode:
-	• Requirements:
-	• Additional functions or structures required:
-	• Function prototypes:
-	• Pseudo code outline:
-	• reusable variables:
-	• Stack offsets to store variables:
+- Custom shellcode:
+	- • Requirements:
+	- • Additional functions or structures required:
+	- • Function prototypes:
+	- • Pseudo code outline:
+	- • reusable variables:
+	- • Stack offsets to store variables:
 
-DEP:
-	• Modules without bad characters:
-	• VirtualAlloc, VirtualProtect, or WriteProcessMemory:
-	• Address or pointer to VA, VP, or WPM:
-	• Known values that can be hard coded:
-	• ROP template: 
+- DEP:
+	- • Modules without bad characters:
+	- • VirtualAlloc, VirtualProtect, or WriteProcessMemory:
+	- • Address or pointer to VA, VP, or WPM:
+	- • Known values that can be hard coded:
+	- • ROP template: 
 	    #VirtualAlloc
 	    va  = struct.pack("<L", (0x45454545)) # dummy VirutalAlloc Address
 	    va += struct.pack("<L", (0x46464646)) # Shellcode Return Address
@@ -81,37 +81,37 @@ DEP:
 	
 	    # Allign ESP to VirtualAlloc call
 
-ASLR:
-	• DebugHelp, CreateToolhelp32Snapshot, EnumPrcessModules, fopen:
-	• string format specifier:
-		○ printf, sprintf, vnsprintf:
-		○ %x:
-		○ %n:
-		○ Number of characters to leak address:
-		○ leaked module address:
-		○ leaked stack address:
+- ASLR:
+	- • DebugHelp, CreateToolhelp32Snapshot, EnumPrcessModules, fopen:
+	- • string format specifier:
+		- ○ printf, sprintf, vnsprintf:
+		- ○ %x:
+		- ○ %n:
+		- ○ Number of characters to leak address:
+		- ○ leaked module address:
+		- ○ leaked stack address:
 
-Reverse Engineering:
-	• Listening ports:
-	• Header format:
-	• Checksum:
-	• Opcodes:
-	• Memory corruptions (scanf, scanf, memset, memcpy, strcpy):
-	• Packet to trigger crash:
-	• Packet to trigger info leak:
-	• Command injection:
+- Reverse Engineering:
+	- • Listening ports:
+	- • Header format:
+	- • Checksum:
+	- • Opcodes:
+	- • Memory corruptions (scanf, scanf, memset, memcpy, strcpy):
+	- • Packet to trigger crash:
+	- • Packet to trigger info leak:
+	- • Command injection:
 
-PoC to crash:
+- PoC to crash:
 
-PoC to EIP control:
+- PoC to EIP control:
 
-PoC bad characters check:
+- PoC bad characters check:
 
-PoC ASLR:
+- PoC ASLR:
 
-PoC DEP:
+- PoC DEP:
 
-Final PoC:
+- Final PoC:
 
-Proof.txt:
+- Proof.txt:
 	
