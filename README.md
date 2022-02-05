@@ -13,20 +13,20 @@ Version:
 Public CVE:  
   
 Overflow type:  
-	- • stack:
-		- • offset to overwrite EIP:
-		- • bad characters:
-		- • Amount of space following overwrite:
-		- • Address to JMP ESP:
-		- • DEP:
-		- • ASLR:
-	- •SEH:
-		- ○ Offest to overwrite SEH:
-		- ○ Modules without SafeSEH:
-		- ○ Address to P/P/R:
-		- ○ short jump on NEH:  0x06eb9090
-		- ○ Bad characters:
-		- ○ Amount of space after SEH overwrite:
+	• stack:  
+		• offset to overwrite EIP:  
+		• bad characters:  
+		• Amount of space following overwrite:  
+		• Address to JMP ESP:  
+		• DEP:  
+		• ASLR:  
+	•SEH:  
+		○ Offest to overwrite SEH:  
+		○ Modules without SafeSEH:  
+		○ Address to P/P/R:  
+		○ short jump on NEH:  0x06eb9090  
+		○ Bad characters:  
+		○ Amount of space after SEH overwrite:  
   
 Egghunter:  
 	- • Search string: w00tw00t
