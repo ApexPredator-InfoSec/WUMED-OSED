@@ -4,29 +4,29 @@ Notes template for Offensive Security's EXP-301 course and OSED eaxm
 This is the template I use to keep track of details while building an exploit or reverse engineering to find a vulnerability in a 32-bit Windows application. It was helpful for me during the EXP-301 course and OSED exam.
 
 
-Machine Name:
-Machine IP:
-Exploit Port:
-Windows version:
-Vulnerable Application:
-Version:
-Public CVE:
+- Machine Name:
+- Machine IP:
+- Exploit Port:
+- Windows version:
+- Vulnerable Application:
+- Version:
+- Public CVE:
 
-Overflow type:
-	-• stack:
-		-○ offset to overwrite EIP:
-		-○ bad characters:
-		-○ Amount of space following overwrite:
-		-○ Address to JMP ESP:
-		-○ DEP:
-		-○ ASLR:
-	-• SEH:
-		-○ Offest to overwrite SEH:
-		-○ Modules without SafeSEH:
-		-○ Address to P/P/R:
-		-○ short jump on NEH:  0x06eb9090
-		-○ Bad characters:
-		-○ Amount of space after SEH overwrite:
+- Overflow type:
+	- • stack:
+		- • offset to overwrite EIP:
+		- • bad characters:
+		- • Amount of space following overwrite:
+		- • Address to JMP ESP:
+		- • DEP:
+		- • ASLR:
+	- •SEH:
+		- ○ Offest to overwrite SEH:
+		- ○ Modules without SafeSEH:
+		- ○ Address to P/P/R:
+		- ○ short jump on NEH:  0x06eb9090
+		- ○ Bad characters:
+		- ○ Amount of space after SEH overwrite:
 
 Egghunter:
 	• Search string: w00tw00t
