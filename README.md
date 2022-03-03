@@ -115,4 +115,6 @@ PoC DEP:
 Final PoC:  
   
 Proof.txt:  
-		  
+
+screen shots and development documentation:  
+ 
