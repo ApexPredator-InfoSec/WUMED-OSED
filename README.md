@@ -1,5 +1,5 @@
 # WUMED-OSED
-Notes template for Offensive Security's EXP-301 course and OSED eaxm
+Notes template for Offensive Security's EXP-301 course and OSED exam
 
 This is the template I use to keep track of details while building an exploit or reverse engineering to find a vulnerability in a 32-bit Windows application. It was helpful for me during the EXP-301 course and OSED exam.
 
